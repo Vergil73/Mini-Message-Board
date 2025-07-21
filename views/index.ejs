@@ -1,0 +1,31 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>HomePage</title>
+</head>
+<body>
+    <h1>Mini-Message-Board</h1>
+    <p>Conversation about something interesting.</p>
+  <ul>
+    <% messages.forEach(msg => { %>
+      <li>
+        <strong><%= msg.user %></strong>: <%= msg.text %>
+        <br />
+          <%= msg.added.toLocaleString() %>
+      </li>
+    <% }) %>
+  </ul>
+
+<!-- Button for Post -->
+<a href="/form">
+  <button type="button">Post</button>
+</a>
+
+
+</body>
+</html>
